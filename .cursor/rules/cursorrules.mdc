@@ -1,0 +1,33 @@
+---
+alwaysApply: true
+---
+
+# Next.js Development Rules
+
+## Core Practices
+- Use TypeScript with strict mode, avoid `any`
+- Prefer Server Components; use Client Components only when needed (mark with 'use client')
+- Follow App Router structure: `app/` for routes, `components/` for components, `lib/` for utilities
+- Use meaningful names, keep components small and focused
+
+## Debuggability
+- Wrap async operations in try-catch with descriptive error messages
+- Log errors with context (function names, parameters, stack traces)
+- Use console.log with prefixes like `[ComponentName]` during development
+- Define TypeScript interfaces for all props, API responses, and data structures
+- Always handle loading and error states in UI
+- Add JSDoc comments for complex functions
+
+## Next.js Specific
+- Use Server Components for data fetching (async/await directly)
+- Use Next.js Image component, Link for navigation
+- Implement loading.tsx and error.tsx for route segments
+- Validate API request data, return proper HTTP status codes
+- Prefix client env vars with `NEXT_PUBLIC_`
+- Use Next.js fetch with appropriate caching strategies
+
+## Code Quality
+- Keep functions under 50 lines, use early returns
+- Write self-documenting code with clear variable names
+- Use optional chaining (?.) and nullish coalescing (??)
+- Sanitize user inputs, never commit secrets
